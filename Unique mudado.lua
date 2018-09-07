@@ -31,7 +31,7 @@ function onMoveItem(cid, item, formPosition, toPosition, fromItem, toItem, fromG
 
 -- broquiar equip de item --
   elseif isEquip(item.uid) and status.slot == 10 then
-    doPlayerSendCancel(cid,"You can't put equips here.")
+        doPlayerSendCancel(cid,"You can't put equips here.")
 
   elseif (((isNumber(getPlayerSlotItem(cid, 5).itemid) and getPlayerSlotItem(cid, 5).itemid > 0 and isWeapon(getPlayerSlotItem(cid, 5).uid) and status.slot == 6 and status.inInv ~= 2) or (isNumber(getPlayerSlotItem(cid, 6).itemid) and getPlayerSlotItem(cid, 6).itemid > 0 and isWeapon(getPlayerSlotItem(cid, 6).uid) and status.slot == 5 and status.inInv ~= 2)) and isWeapon(item.uid) and getItemAttribute(item.uid, "dual") == "dual") then          
         if getStor(cid, 150000) == 1 then
