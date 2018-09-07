@@ -1,6 +1,6 @@
 Lib.lua
 
-twohandconfig = {
+twoHandConfig = {
                  ["all"] = {7418, 2390},
                  [7418]  = {lv = 10, voc = {1,3}},
                  [2390]  = {lv = 200, voc = {2,4}},
