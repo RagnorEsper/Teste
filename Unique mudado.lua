@@ -14,9 +14,13 @@ function onMoveItem(cid, item, formPosition, toPosition, fromItem, toItem, fromG
     return false   
 -- unique item --	
   elseif ((status.inInv == 0 and status.inInvBag == 3 and status.inDepot == 3) or (status.inDepot == 0 and status.inInv == 3 and status.inInvBag == 3) or (status.inInvBag == 0 and status.inDepot == 3 and status.inInv == 3)) then
-        if not isContainer(item.uid) and (searchIfItemHasAttribute(item, "unique") == true) then -- Se é um item
-          doPlayerSendCancel(cid, "You can't drop a special item on ground.")
-          return false
+        if not isContainer(item.uid) then
+	  if searchIfItemHasAttribute(item, "unique") == true then -- Se é um item
+            doPlayerSendCancel(cid, "You can't drop a special item on ground.")
+            return false
+	  else
+	    return true
+          end
         elseif searchContainerIfHasAttribute(item.uid, "unique") == true then -- se for um container, procurar por unique itens dentro...
               doPlayerSendCancel(cid, "You can't throw this bag that contains special item[s] on ground")
               return false
